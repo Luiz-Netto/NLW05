@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import IconFeather from 'react-native-vector-icons/Feather';
 
 import greetingImg from './img/watering.png';
 
@@ -22,7 +23,7 @@ const App = () => {
         sempre que precisar
       </Text>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>{'>'}</Text>
+        <IconFeather name="chevron-right" style={styles.buttonIcon} />
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -59,9 +60,9 @@ const styles = StyleSheet.create({
     height: 56,
     backgroundColor: '#32B768',
   },
-  buttonText: {
-    fontSize: 24,
+  buttonIcon: {
     color: '#FFFFFF',
+    fontSize: 32,
   },
 });
 

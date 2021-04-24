@@ -36,7 +36,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NLW05/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NLW05/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NLW05/main.m; sourceTree = "<group>"; };
+		2D9F553751DC4C62B4A61077 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Regular.ttf"; path = "../assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		623DEE14FD2027CA3044D00A /* Pods-NLW05-NLW05Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLW05-NLW05Tests.release.xcconfig"; path = "Target Support Files/Pods-NLW05-NLW05Tests/Pods-NLW05-NLW05Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6AF87A9E49954FD2AD81BE5E /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Bold.ttf"; path = "../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NLW05/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F0EB1D01CC04B773D57CC95 /* Pods-NLW05.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLW05.release.xcconfig"; path = "Target Support Files/Pods-NLW05/Pods-NLW05.release.xcconfig"; sourceTree = "<group>"; };
 		AFFC76822634B3230046C5AA /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		AFFC768F2634B3250046C5AA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		AFFC76902634B3250046C5AA /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		AFFC76912634B3260046C5AA /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		B43D95DEC66046B3AFA5D0DA /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Light.ttf"; path = "../assets/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		DF80A96B70D0BDF8D8DE1377 /* Pods-NLW05.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLW05.debug.xcconfig"; path = "Target Support Files/Pods-NLW05/Pods-NLW05.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A938E7CF5CE310DB341383 /* Pods-NLW05-NLW05Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLW05-NLW05Tests.debug.xcconfig"; path = "Target Support Files/Pods-NLW05-NLW05Tests/Pods-NLW05-NLW05Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,16 @@
 			name = NLW05;
 			sourceTree = "<group>";
 		};
+		21BB05B5CE784098B6AABC1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6AF87A9E49954FD2AD81BE5E /* Ubuntu-Bold.ttf */,
+				B43D95DEC66046B3AFA5D0DA /* Ubuntu-Light.ttf */,
+				2D9F553751DC4C62B4A61077 /* Ubuntu-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				10473BFA80FAE8372F8716E1 /* Pods */,
+				21BB05B5CE784098B6AABC1F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
