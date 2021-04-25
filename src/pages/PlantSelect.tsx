@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {FlatList, Text, SafeAreaView, StyleSheet, View} from 'react-native';
 
 import {Header} from '../components';
-import {EnvironmentButton} from '../components';
+import {EnvironmentButton, Load, PlantCardPrimary} from '../components';
 import {api} from '../services';
 
 interface IEnvironmentProps {
@@ -10,11 +10,41 @@ interface IEnvironmentProps {
   title: string;
 }
 
+interface IPlantProps {
+  key: number;
+  name: string;
+  about: string;
+  water_tips: string;
+  photo: string;
+  environments: [string];
+  frequency: {
+    times: number;
+    repeat_every: string;
+  };
+}
+
 const PlantSelect = () => {
   const [environments, setEnvironments] = useState<IEnvironmentProps[]>([]);
+  const [plants, setPlants] = useState<IPlantProps[]>([]);
+  const [filteredPlants, setFilteredPlants] = useState<IPlantProps[]>([]);
+  const [environmentSelected, setEnvironmentSelected] = useState('all');
+  const [loading, setLoading] = useState(true);
+
+  const handleEnvironmentSelected = (target: string) => {
+    setEnvironmentSelected(target);
+    if (environmentSelected == 'all') return setFilteredPlants(plants);
+    const filtered = plants.filter(plants =>
+      plants.environments.includes(environmentSelected),
+    );
+
+    setFilteredPlants(filtered);
+  };
+
   useEffect(() => {
     async function fetchEnvironment() {
-      const {data} = await api.get('plants_environments');
+      const {data} = await api.get(
+        'plants_environments?_sort=title&_order=asc',
+      );
       setEnvironments([
         {
           key: 'all',
@@ -25,6 +55,15 @@ const PlantSelect = () => {
     }
     fetchEnvironment();
   }, []);
+
+  useEffect(() => {
+    async function fetchPlants() {
+      const {data} = await api.get('plants?_sort=name&_order=asc');
+      setPlants(data);
+    }
+    fetchPlants();
+  }, []);
+  if (loading) <Load />;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -37,10 +76,26 @@ const PlantSelect = () => {
           data={environments}
           keyExtractor={item => item.key}
           renderItem={({item}) => {
-            return <EnvironmentButton title={item.title} />;
+            return (
+              <EnvironmentButton
+                title={item.title}
+                active={item.key === environmentSelected}
+                onPress={() => handleEnvironmentSelected(item.key)}
+              />
+            );
           }}
           horizontal
           contentContainerStyle={styles.environmentList}
+        />
+      </View>
+      <View style={styles.plants}>
+        <FlatList
+          data={filteredPlants}
+          renderItem={({item}) => {
+            return <PlantCardPrimary data={item} />;
+          }}
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
         />
       </View>
     </SafeAreaView>
@@ -72,6 +127,11 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     marginLeft: 32,
     marginVertical: 32,
+  },
+  plants: {
+    flex: 1,
+    paddingHorizontal: 32,
+    justifyContent: 'center',
   },
 });
 

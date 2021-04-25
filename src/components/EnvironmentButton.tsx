@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 12,
-    marginRight: 5,
+    marginHorizontal: 5,
   },
   containerActive: {
     color: '#32B768',
