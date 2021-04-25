@@ -1,9 +1,11 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
 import {Button} from '../components';
 
 const Confirmation = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -14,7 +16,10 @@ const Confirmation = () => {
         </Text>
       </View>
       <View style={styles.footer}>
-        <Button title="começar" />
+        <Button
+          title="começar"
+          onPress={() => navigation.navigate('PlantSelect')}
+        />
       </View>
     </SafeAreaView>
   );

@@ -1,3 +1,4 @@
 import {Button} from './Button';
-
-export {Button};
+import {Header} from './Header';
+import {EnvironmentButton} from './EnvironmentButton';
+export {Button, EnvironmentButton, Header};
