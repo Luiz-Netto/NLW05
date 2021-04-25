@@ -1,10 +1,19 @@
 import React from 'react';
-import {TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  StyleSheet,
+  Text,
+} from 'react-native';
 
-const Button = () => {
+interface IbuttonProps extends TouchableOpacityProps {
+  title: string;
+}
+
+const Button = ({title, ...rest}: IbuttonProps) => {
   return (
-    <TouchableOpacity style={styles.container}>
-      <Text style={styles.title}>confirmar</Text>
+    <TouchableOpacity style={styles.container} {...rest}>
+      <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
 };

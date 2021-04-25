@@ -8,6 +8,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
 import {Button} from '../components';
 
@@ -29,6 +30,7 @@ const UserIdentification = () => {
     setIsFilled(!!input);
     setName(input);
   }
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -52,7 +54,10 @@ const UserIdentification = () => {
               onChangeText={handleInputChange}
             />
             <View style={styles.footer}>
-              <Button />
+              <Button
+                title="Confirmar"
+                onPress={() => navigation.navigate('Confirmation')}
+              />
             </View>
           </View>
         </View>

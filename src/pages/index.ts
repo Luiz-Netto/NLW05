@@ -1,4 +1,5 @@
 import {UserIdentification} from './UserIdentification';
 import {Welcome} from './Welcome';
+import {Confirmation} from './Confirmation';
 
-export {UserIdentification, Welcome};
+export {Confirmation, UserIdentification, Welcome};

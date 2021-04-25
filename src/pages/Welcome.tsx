@@ -9,10 +9,13 @@ import {
   View,
 } from 'react-native';
 import IconFeather from 'react-native-vector-icons/Feather';
+import {useNavigation} from '@react-navigation/core';
 
 import greetingImg from '../img/watering.png';
 
 const Welcome = () => {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
@@ -24,7 +27,11 @@ const Welcome = () => {
           Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
           sempre que precisar
         </Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.navigate('UserIdentification');
+          }}>
           <IconFeather name="chevron-right" style={styles.buttonIcon} />
         </TouchableOpacity>
       </View>

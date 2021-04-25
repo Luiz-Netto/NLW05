@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {Welcome, UserIdentification} from './pages';
+import Routes from './routes';
 
 const App = () => {
-  return <UserIdentification />;
+  return <Routes />;
 };
 
 export default App;
