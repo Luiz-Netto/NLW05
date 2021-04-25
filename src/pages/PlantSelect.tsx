@@ -1,11 +1,30 @@
-import React from 'react';
-import {Text, StyleSheet, View, FlatList} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, {useEffect, useState} from 'react';
+import {FlatList, Text, SafeAreaView, StyleSheet, View} from 'react-native';
 
 import {Header} from '../components';
 import {EnvironmentButton} from '../components';
+import {api} from '../services';
+
+interface IEnvironmentProps {
+  key: string;
+  title: string;
+}
 
 const PlantSelect = () => {
+  const [environments, setEnvironments] = useState<IEnvironmentProps[]>([]);
+  useEffect(() => {
+    async function fetchEnvironment() {
+      const {data} = await api.get('plants_environments');
+      setEnvironments([
+        {
+          key: 'all',
+          title: 'todos',
+        },
+        ...data,
+      ]);
+    }
+    fetchEnvironment();
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -15,12 +34,12 @@ const PlantSelect = () => {
       </View>
       <View>
         <FlatList
-          data={[1, 2, 3, 4, 5]}
+          data={environments}
+          keyExtractor={item => item.key}
           renderItem={({item}) => {
-            <EnvironmentButton title="cozinha" active />;
+            return <EnvironmentButton title={item.title} />;
           }}
           horizontal
-          showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.environmentList}
         />
       </View>
