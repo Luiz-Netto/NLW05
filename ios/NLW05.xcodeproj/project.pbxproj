@@ -13,6 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6CFFFB077D8AC146B5C49C2F /* libPods-NLW05-NLW05Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F85358BE588684A8A9D48 /* libPods-NLW05-NLW05Tests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		AF9395BE26377AE700646D47 /* liblottie-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9395BD26377AE700646D47 /* liblottie-ios.a */; };
+		AF93962B2637A1C300646D47 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93962A2637A1C300646D47 /* File.swift */; };
 		EAEB5DB6DB70D6550D233F1E /* libPods-NLW05.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F92B5DD9CC31292CE2DADF9E /* libPods-NLW05.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,9 @@
 		6AF87A9E49954FD2AD81BE5E /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Bold.ttf"; path = "../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NLW05/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F0EB1D01CC04B773D57CC95 /* Pods-NLW05.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLW05.release.xcconfig"; path = "Target Support Files/Pods-NLW05/Pods-NLW05.release.xcconfig"; sourceTree = "<group>"; };
+		AF9395BD26377AE700646D47 /* liblottie-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9396292637A1C200646D47 /* NLW05-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NLW05-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF93962A2637A1C300646D47 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		AFFC76822634B3230046C5AA /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		AFFC76832634B3230046C5AA /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		AFFC76842634B3230046C5AA /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9395BE26377AE700646D47 /* liblottie-ios.a in Frameworks */,
 				EAEB5DB6DB70D6550D233F1E /* libPods-NLW05.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +146,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF9395BD26377AE700646D47 /* liblottie-ios.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				F92B5DD9CC31292CE2DADF9E /* libPods-NLW05.a */,
 				EE1F85358BE588684A8A9D48 /* libPods-NLW05-NLW05Tests.a */,
@@ -157,6 +164,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				AF93962A2637A1C300646D47 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* NLW05 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* NLW05Tests */,
@@ -164,6 +172,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				10473BFA80FAE8372F8716E1 /* Pods */,
 				21BB05B5CE784098B6AABC1F /* Resources */,
+				AF9396292637A1C200646D47 /* NLW05-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -261,7 +270,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -465,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				AF93962B2637A1C300646D47 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5A938E7CF5CE310DB341383 /* Pods-NLW05-NLW05Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -511,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 623DEE14FD2027CA3044D00A /* Pods-NLW05-NLW05Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NLW05Tests/Info.plist;
@@ -551,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NLW05;
+				SWIFT_OBJC_BRIDGING_HEADER = "NLW05-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,6 +589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NLW05;
+				SWIFT_OBJC_BRIDGING_HEADER = "NLW05-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
