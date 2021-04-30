@@ -1,14 +1,25 @@
-import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, {useEffect, useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
 import photo from '../img/favicon.png';
 
 const Header = () => {
+  const [userName, setuserName] = useState<string>();
+
+  useEffect(() => {
+    async function loadStorageUserName() {
+      const user = await AsyncStorage.getItem('@plantmanager:user');
+      setuserName(user || '');
+    }
+    loadStorageUserName();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View>
         <Text>Olá</Text>
-        <Text>Luiz</Text>
+        <Text>{userName}</Text>
       </View>
       <Image source={photo} style={styles.image} />
     </View>

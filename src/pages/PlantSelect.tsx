@@ -82,6 +82,7 @@ const PlantSelect = () => {
       const {data} = await api.get(
         'plants_environments?_sort=title&_order=asc',
       );
+      if (!data) return;
       setEnvironments([
         {
           key: 'all',

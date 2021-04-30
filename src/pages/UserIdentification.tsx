@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
@@ -11,11 +12,12 @@ import {
 import {useNavigation} from '@react-navigation/core';
 
 import {Button} from '../components';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const UserIdentification = () => {
   const [isFocused, setIsFocused] = useState<Boolean>(false);
   const [isFilled, setIsFilled] = useState<Boolean>(false);
-  const [name, setName] = useState<String>();
+  const [name, setName] = useState<string>();
 
   function handleInputBlur() {
     setIsFocused(false);
@@ -31,6 +33,12 @@ const UserIdentification = () => {
     setName(input);
   }
   const navigation = useNavigation();
+
+  async function handleSubmit() {
+    if (!name) return Alert.alert('Me diz o seu nome 😢');
+    await AsyncStorage.setItem('@plantmanager:user', name);
+    navigation.navigate('Confirmation');
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -54,10 +62,7 @@ const UserIdentification = () => {
               onChangeText={handleInputChange}
             />
             <View style={styles.footer}>
-              <Button
-                title="Confirmar"
-                onPress={() => navigation.navigate('Confirmation')}
-              />
+              <Button title="Confirmar" onPress={() => handleSubmit()} />
             </View>
           </View>
         </View>
