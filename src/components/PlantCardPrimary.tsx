@@ -12,7 +12,7 @@ interface IPlantProps extends RectButtonProps {
 
 const PlantCardPrimary = ({data, ...rest}: IPlantProps) => {
   return (
-    <RectButton style={styles.container}>
+    <RectButton style={styles.container} {...rest}>
       <SvgFromUri uri={data.photo} width={70} height={70} />
       <Text style={styles.text}>{data.name}</Text>
     </RectButton>

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
 import {Header} from '../components';
 import {EnvironmentButton, Load, PlantCardPrimary} from '../components';
@@ -18,7 +19,7 @@ interface IEnvironmentProps {
 }
 
 interface IPlantProps {
-  key: number;
+  id: number;
   name: string;
   about: string;
   water_tips: string;
@@ -36,10 +37,10 @@ const PlantSelect = () => {
   const [filteredPlants, setFilteredPlants] = useState<IPlantProps[]>([]);
   const [environmentSelected, setEnvironmentSelected] = useState('all');
   const [loading, setLoading] = useState(true);
-
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [loadedAll, setLoadedAll] = useState(false);
+
+  const navigation = useNavigation();
 
   const handleEnvironmentSelected = (target: string) => {
     setEnvironmentSelected(target);
@@ -77,6 +78,10 @@ const PlantSelect = () => {
     fetchPlants();
   }
 
+  const handleSelectedPlant = (plant: IPlantProps) => {
+    navigation.navigate('PlantSave', {plant});
+  };
+
   useEffect(() => {
     async function fetchEnvironment() {
       const {data} = await api.get(
@@ -110,7 +115,7 @@ const PlantSelect = () => {
       <View>
         <FlatList
           data={environments}
-          keyExtractor={item => item.key}
+          keyExtractor={item => String(item.key)}
           renderItem={({item}) => {
             return (
               <EnvironmentButton
@@ -127,8 +132,14 @@ const PlantSelect = () => {
       <View style={styles.plants}>
         <FlatList
           data={filteredPlants}
+          keyExtractor={item => String(item.id)}
           renderItem={({item}) => {
-            return <PlantCardPrimary data={item} />;
+            return (
+              <PlantCardPrimary
+                data={item}
+                onPress={() => handleSelectedPlant(item)}
+              />
+            );
           }}
           showsVerticalScrollIndicator={false}
           numColumns={2}
